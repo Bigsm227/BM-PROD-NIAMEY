@@ -31,7 +31,7 @@ export default function Paiement() {
   const [method, setMethod] = useState("MyNita");
   const [name, setName] = useState("");
 
-  const selectedPrice = licenses.find((l) => l.key === license)?.price ?? priceMp3 || priceWav;
+  const selectedPrice = (licenses.find((l) => l.key === license)?.price ?? priceMp3) || priceWav;
 
   const confirm = async () => {
     if (Platform.OS !== "web") Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
